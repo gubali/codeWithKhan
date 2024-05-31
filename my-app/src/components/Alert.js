@@ -2,11 +2,11 @@ import React from "react";
 
 function Alert(props) {
   return (
-    <div
-      className="alert alert-warning alert-dismissible fade show"
+    props.alert && <div
+      className={`alert alert-${props.alert.type} alert-dismissible fade show`}
       role="alert"
     >
-      <strong>{props.title}</strong> {props.heading}
+      <strong>{props.alert.type}</strong> {props.alert.msg}
       <button
         type="button"
         className="btn-close"
